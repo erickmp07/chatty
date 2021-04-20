@@ -20,6 +20,7 @@ This project was developed with the following technologies:
 - [Yarn](https://yarnpkg.com/)
 - [Express](https://expressjs.com/)
 - [TypeORM](https://typeorm.io/#/)
+- [SQLite3](https://sqlite.org)
 
 ## Project
 
