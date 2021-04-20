@@ -16,6 +16,7 @@ This project was developed with the following technologies:
 - [TypeScript](https://www.typescriptlang.org)
 - [Node.js](https://nodejs.org)
 - [Yarn](https://yarnpkg.com/)
+- [Express](https://expressjs.com/)
 
 ## License
 
