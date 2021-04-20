@@ -19,6 +19,7 @@ This project was developed with the following technologies:
 - [Node.js](https://nodejs.org)
 - [Yarn](https://yarnpkg.com/)
 - [Express](https://expressjs.com/)
+- [TypeORM](https://typeorm.io/#/)
 
 ## Project
 
