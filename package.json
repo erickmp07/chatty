@@ -5,6 +5,9 @@
   "repository": "https://github.com/erickmp07/chatty.git",
   "author": "Erick Macedo Pinto <erimacedo_92@hotmail.com>",
   "license": "MIT",
+  "scripts": {
+    "dev": "ts-node-dev src/server.ts"
+  },
   "dependencies": {
     "express": "^4.17.1"
   },
