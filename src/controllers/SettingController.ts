@@ -2,7 +2,7 @@ import { Request, Response } from "express";
 import { SettingService } from "../services/SettingService";
 
 class SettingController {
-    async create(request: Request, response: Response) {
+    async create(request: Request, response: Response): Promise<Response> {
         const { username, chat } = request.body;
 
         const settingService = new SettingService();
