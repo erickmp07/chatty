@@ -69,6 +69,12 @@ body: {
     "username": "admin",
     "chat": true
 }
+
+# POST (JSON) - Create User
+http://localhost:3333/users
+body: {
+    "email": "email@domain.com"
+}
 ```
 
 ## License
