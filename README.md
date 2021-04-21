@@ -19,6 +19,8 @@ This project was developed with the following technologies:
 - [Node.js](https://nodejs.org)
 - [Yarn](https://yarnpkg.com/)
 - [Express](https://expressjs.com/)
+- [TypeORM](https://typeorm.io/#/)
+- [SQLite3](https://sqlite.org)
 
 ## Project
 
@@ -43,6 +45,10 @@ git clone https://github.com/erickmp07/chatty.git
 ```bash
 yarn
 ```
+- Create the database:
+```bash
+yarn typeorm migration:run
+```
 
 <br>
 
@@ -54,6 +60,16 @@ yarn dev
 <br>
 
 The application can be accessed at [`localhost:3333`](http://localhost:3333).
+
+The available routes are:
+```bash
+# POST (JSON) - Create Setting
+http://localhost:3333/settings
+body: {
+    "username": "admin",
+    "chat": true
+}
+```
 
 ## License
 
