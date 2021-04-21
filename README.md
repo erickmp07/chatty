@@ -69,6 +69,30 @@ body: {
     "username": "admin",
     "chat": true
 }
+
+# POST (JSON) - Create User
+http://localhost:3333/users
+body: {
+    "email": "email@domain.com"
+}
+
+# POST (JSON) - User sends Message
+http://localhost:3333/messages
+body: {
+    "user_id": "user_id",
+    "text": "user message"
+}
+
+# POST (JSON) - Admin sends Message
+http://localhost:3333/messages
+body: {
+    "user_id": "user_id",
+    "text": "admin message",
+    "admin_id": "admin_id"
+}
+
+# GET - Show all Messages by User
+http://localhost:3333/messages/:user_id
 ```
 
 ## License
