@@ -61,6 +61,16 @@ yarn dev
 
 The application can be accessed at [`localhost:3333`](http://localhost:3333).
 
+The available routes are:
+```bash
+# POST (JSON) - Create Setting
+http://localhost:3333/settings
+body: {
+    "username": "admin",
+    "chat": true
+}
+```
+
 ## License
 
 Licensed under [MIT](LICENSE) license.
