@@ -75,6 +75,19 @@ http://localhost:3333/users
 body: {
     "email": "email@domain.com"
 }
+
+# POST (JSON) - User sends Message
+body: {
+    "user_id": "user_id",
+	"text": "user message"
+}
+
+# POST (JSON) - Admin sends Message
+body: {
+    "user_id": "user_id",
+	"text": "admin message",
+    "admin_id": "admin_id"
+}
 ```
 
 ## License
