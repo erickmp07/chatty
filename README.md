@@ -80,14 +80,14 @@ body: {
 http://localhost:3333/messages
 body: {
     "user_id": "user_id",
-	"text": "user message"
+    "text": "user message"
 }
 
 # POST (JSON) - Admin sends Message
 http://localhost:3333/messages
 body: {
     "user_id": "user_id",
-	"text": "admin message",
+    "text": "admin message",
     "admin_id": "admin_id"
 }
 
