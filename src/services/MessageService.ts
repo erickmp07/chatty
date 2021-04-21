@@ -21,6 +21,16 @@ class MessageService {
 
         return message;
     }
+
+    async listByUser(user_id: string) {
+        const messageRepository = getCustomRepository(MessageRepository);
+
+        const messages = await messageRepository.find({
+            user_id
+        });
+
+        return messages;
+    }
 }
 
 export { MessageService };
