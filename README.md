@@ -22,6 +22,7 @@ This project was developed with the following technologies:
 - [TypeORM](https://typeorm.io/#/)
 - [SQLite3](https://sqlite.org)
 - [socket.io](https://socket.io/)
+- [EJS](https://ejs.co/)
 
 ## Project
 
