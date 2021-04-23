@@ -11,6 +11,12 @@
     <img alt="License" title="License" src="https://img.shields.io/github/license/erickmp07/chatty">
 </p>
 
+<br>
+
+<p align="center">
+    <img alt="Chatty" title="Chatty main page" src="./public/images/chatty.png">
+</p>
+
 ## Technologies
 
 This project was developed with the following technologies:
