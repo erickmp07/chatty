@@ -20,10 +20,18 @@ io.on("connect", (socket) => {
                 user_id: user.id
             });
         } else {
-            await connectionService.create({
-                socket_id,
-                user_id: userExists.id
-            });
+            const connection = await connectionService.findByUserId(userExists.id);
+
+            if (!connection) {
+                await connectionService.create({
+                    socket_id,
+                    user_id: userExists.id
+                });
+            } else {
+                connection.socket_id = socket_id;
+
+                await connectionService.create(connection);
+            }
         }
     });
 });
