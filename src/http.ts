@@ -24,7 +24,6 @@ const io = new Server(http);
 
 io.on("connection", (socket: Socket) => {
     console.log("WebSocket connected", socket.id);
-
 });
 
 app.use(express.json());
