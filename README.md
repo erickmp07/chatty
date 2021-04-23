@@ -47,10 +47,6 @@ git clone https://github.com/erickmp07/chatty.git
 ```bash
 yarn
 ```
-- Create the database:
-```bash
-yarn typeorm migration:run
-```
 
 <br>
 
@@ -71,6 +67,9 @@ body: {
     "username": "admin",
     "chat": true
 }
+
+# GET - Find Setting by Username
+http://localhost:3333/settings/:username
 
 # POST (JSON) - Create User
 http://localhost:3333/users
