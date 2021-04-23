@@ -71,6 +71,18 @@ body: {
 # GET - Find Setting by Username
 http://localhost:3333/settings/:username
 
+# PUT (Params + JSON) - Update Setting enabling the Chat
+http://localhost:3333/settings/:username
+body: {
+    "chat": true
+}
+
+# PUT (Params + JSON) - Update Setting disabling the Chat
+http://localhost:3333/settings/:username
+body: {
+    "chat": false
+}
+
 # POST (JSON) - Create User
 http://localhost:3333/users
 body: {
