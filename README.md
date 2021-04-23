@@ -61,6 +61,9 @@ The application can be accessed at [`localhost:3333`](http://localhost:3333).
 
 The available routes are:
 ```bash
+# GET - Go the chat page for support
+http://localhost:3333/pages/client
+
 # POST (JSON) - Create Setting
 http://localhost:3333/settings
 body: {
