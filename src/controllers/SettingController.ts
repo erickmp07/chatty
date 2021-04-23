@@ -27,6 +27,17 @@ class SettingController {
 
         return response.json(setting);
     }
+
+    async update(request: Request, response: Response) {
+        const { username } = request.params;
+        const { chat } = request.body;
+
+        const settingService = new SettingService();
+
+        const setting = await settingService.update(username, chat);
+
+        return response.json(setting);
+    } 
 }
 
 export { SettingController };
