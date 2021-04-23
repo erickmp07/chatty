@@ -5,8 +5,8 @@ import { getCustomRepository, Repository } from "typeorm";
 interface IConnectionCreate {
     socket_id: string;
     user_id: string;
-    admin_id: string;
-    id: string;
+    admin_id?: string;
+    id?: string;
 }
 
 class ConnectionService {
