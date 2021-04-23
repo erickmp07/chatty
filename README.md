@@ -11,6 +11,12 @@
     <img alt="License" title="License" src="https://img.shields.io/github/license/erickmp07/chatty">
 </p>
 
+<br>
+
+<p align="center">
+    <img alt="Chatty" title="Chatty main page" src="./public/images/chatty.png">
+</p>
+
 ## Technologies
 
 This project was developed with the following technologies:
@@ -21,6 +27,8 @@ This project was developed with the following technologies:
 - [Express](https://expressjs.com/)
 - [TypeORM](https://typeorm.io/#/)
 - [SQLite3](https://sqlite.org)
+- [socket.io](https://socket.io/)
+- [EJS](https://ejs.co/)
 
 ## Project
 
@@ -45,10 +53,6 @@ git clone https://github.com/erickmp07/chatty.git
 ```bash
 yarn
 ```
-- Create the database:
-```bash
-yarn typeorm migration:run
-```
 
 <br>
 
@@ -63,11 +67,29 @@ The application can be accessed at [`localhost:3333`](http://localhost:3333).
 
 The available routes are:
 ```bash
+# GET - Go the chat page for support
+http://localhost:3333/pages/client
+
 # POST (JSON) - Create Setting
 http://localhost:3333/settings
 body: {
     "username": "admin",
     "chat": true
+}
+
+# GET - Find Setting by Username
+http://localhost:3333/settings/:username
+
+# PUT (Params + JSON) - Update Setting enabling the Chat
+http://localhost:3333/settings/:username
+body: {
+    "chat": true
+}
+
+# PUT (Params + JSON) - Update Setting disabling the Chat
+http://localhost:3333/settings/:username
+body: {
+    "chat": false
 }
 
 # POST (JSON) - Create User
