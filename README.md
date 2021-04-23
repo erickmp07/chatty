@@ -21,6 +21,7 @@ This project was developed with the following technologies:
 - [Express](https://expressjs.com/)
 - [TypeORM](https://typeorm.io/#/)
 - [SQLite3](https://sqlite.org)
+- [socket.io](https://socket.io/)
 
 ## Project
 
