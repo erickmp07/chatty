@@ -17,6 +17,16 @@ class SettingController {
             });
         }
     }
+
+    async findByUsername(request: Request, response: Response) {
+        const { username } = request.params;
+
+        const settingService = new SettingService();
+
+        const setting = await settingService.findByUsername(username);
+
+        return response.json(setting);
+    }
 }
 
 export { SettingController };

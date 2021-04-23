@@ -34,11 +34,11 @@ class SettingService {
     }
 
     async findByUsername(username: string) {
-        const settings = await this.settingRepository.findOne({
+        const setting = await this.settingRepository.findOne({
             username
         });
 
-        return settings;
+        return setting;
     }
 }
 
