@@ -26,6 +26,24 @@ document.querySelector("#start_chat").addEventListener("click", (event) => {
     });
 
     socket.on("client_list_all_messages", messages => {
-        console.log("Messages", messages);
+        let templateClient = document.getElementById("message-user-template").innerHTML;
+        let templateAdmin = document.getElementById("admin-template").innerHTML;
+
+        let rendered = null;
+        messages.forEach(message => {
+
+            if (message.admin_id === null) {
+                rendered = Mustache.render(templateClient, {
+                     message: message.text,
+                     email
+                });
+            } else {
+                rendered = Mustache.render(templateAdmin, {
+                    message_admin: message.text
+                });
+            }
+
+            document.getElementById("messages").innerHTML += rendered;
+        });
     });
 });
