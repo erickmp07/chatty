@@ -1,9 +1,8 @@
-import { getCustomRepository, Repository } from "typeorm";
-import { User } from "../entities/User";
+import { getCustomRepository } from "typeorm";
 import { UserRepository } from "../repositories/UserRepository";
 
 class UserService {
-    private userRepository: Repository<User>;
+    private userRepository: UserRepository;
 
     constructor() {
         this.userRepository = getCustomRepository(UserRepository);

@@ -21,24 +21,23 @@
         </div>
 
         <div class="text_support">
-            <script id="email-template" type="text/template">
-          <div class="client">
-            <span class="name">{{email}}</span>
-        </script>
             <script id="message-user-template" type="text/template">
-            <span class="client message">
-              {{message}}
-              <!-- <label class="date">{{date}}</label> -->
-            </span>
-          </div>
-        </script>
+
+            <div class="client">
+                <span class="name">{{email}}</span>
+                <span class="client message">
+                    {{message}}
+                    <!-- <label class="date">{{date}}</label> -->
+                </span>
+            </div>
+            </script>
             <script id="admin-template" type="text/template">
-          <div class="admin">
-            <span class="admin_name">Customer support</span>
-            <span class="admin message"> {{message_admin}} </span>
-            <!-- <label class="date">{{date}}</label> -->
-          </div>
-        </script>
+                <div class="admin">
+                    <span class="admin_name">Support</span>
+                    <span class="admin message"> {{message_admin}} </span>
+                    <!-- <label class="date">{{date}}</label> -->
+                </div>
+            </script>
             <div id="messages" class="chat__messages"></div>
             <!-- <div class="line"></div> -->
         </div>
@@ -59,7 +58,7 @@
         </div>
         <div class="text_support text_help">
             <div class="text_help">
-                <span>How can we help you?</span>
+                <span>How may we help you?</span>
                 <textarea name="txt_help" id="txt_help" cols="30" rows="10" onkeydown="keyUpTextHelp(event)"
                     maxlength="250"></textarea>
                 <span class="charac_remaining">

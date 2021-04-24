@@ -1,6 +1,6 @@
-import { Connection } from "../entities/Connection";
 import { ConnectionRepository } from "../repositories/ConnectionRepository";
-import { getCustomRepository, Repository } from "typeorm";
+import { getCustomRepository } from "typeorm";
+import { Connection } from "../entities/Connection";
 
 interface IConnectionCreate {
     socket_id: string;
@@ -10,7 +10,7 @@ interface IConnectionCreate {
 }
 
 class ConnectionService {
-    private connectionRepository: Repository<Connection>;
+    private connectionRepository: ConnectionRepository;
 
     constructor() {
         this.connectionRepository = getCustomRepository(ConnectionRepository);
@@ -35,6 +35,32 @@ class ConnectionService {
         });
 
         return connection;
+    }
+
+    async findAllWithoutAdmin() {
+        const connections = await this.connectionRepository.find({
+            where: { admin_id: null },
+            relations: ["user"]
+        });
+
+        return connections;
+    }
+
+    async findBySocketId(socket_id: string) {
+        const connection = await this.connectionRepository.findOne({
+            socket_id
+        });
+
+        return connection;
+    }
+
+    async updateAdminId(user_id: string, admin_id: string) {
+        await this.connectionRepository
+            .createQueryBuilder()
+            .update(Connection)
+            .set({ admin_id })
+            .where("user_id = :user_id", { user_id })
+            .execute();
     }
 }
 
