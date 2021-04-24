@@ -14,9 +14,13 @@
 
 <br>
 
-<p align="center">
-    <img alt="Chatty" title="Chatty main page" src="./public/images/chatty.png">
-</p>
+<div style="margin:0; padding: 0" align="center">
+    <img alt="Chatty - Client index page" title="Chatty - Client index page" src="./public/images/chatty.png">
+    <img alt="Chatty - Client chat" title="Chatty - Client chat" src="./public/images/chatty-client-page.png">
+</div>
+<div align="center">
+    <img alt="Chatty - Admin chat" title="Chatty - Admin chat" src="./public/images/chatty-admin-page.png">
+</div>
 
 ## Technologies
 
