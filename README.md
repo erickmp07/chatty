@@ -15,7 +15,7 @@
 <br>
 
 <div style="margin:0; padding: 0" align="center">
-    <img alt="Chatty - Client index page" title="Chatty - Client index page" src="./public/images/chatty.png">
+    <img alt="Chatty - Client's home page" title="Chatty - Client's home page" src="./public/images/chatty.png">
     <img alt="Chatty - Client chat" title="Chatty - Client chat" src="./public/images/chatty-client-page.png">
 </div>
 <div align="center">
