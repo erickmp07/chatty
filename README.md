@@ -48,6 +48,8 @@ The conversation history will be kept so that when the user returns, he will be 
 
 ## How to run
 
+### Locally
+
 Prerequisites:
 
 Download and install [Node.js](https://nodejs.org/en/download/) and [Yarn](https://classic.yarnpkg.com/en/docs/install/).
@@ -80,7 +82,7 @@ The available routes are:
 http://localhost:3333/pages/client
 
 # GET - Go to the admin page for support
-http;//localhost:3333/pages/admin
+http://localhost:3333/pages/admin
 
 # POST (JSON) - Create Setting
 http://localhost:3333/settings
@@ -127,6 +129,83 @@ body: {
 
 # GET - Show all Messages by User
 http://localhost:3333/messages/:user_id
+```
+
+### Docker container
+
+Prerequisites:
+
+Download and install [Docker](https://www.docker.com/products/docker-desktop)
+
+<br>
+
+- Pull the image with the command:
+```bash
+docker pull erickmp07/chatty:latest
+```
+
+- Run the image with the command:
+```bash
+docker run -p 49160:3333 -d erickmp07/chatty
+```
+
+<br>
+
+The application can be accessed at [`localhost:49160`](http://localhost:49160).
+
+The available routes are:
+```bash
+# GET - Go to the chat page for support
+http://localhost:49160/pages/client
+
+# GET - Go to the admin page for support
+http://localhost:49160/pages/admin
+
+# POST (JSON) - Create Setting
+http://localhost:49160/settings
+body: {
+    "username": "admin",
+    "chat": true
+}
+
+# GET - Find Setting by Username
+http://localhost:49160/settings/:username
+
+# PUT (Params + JSON) - Update Setting enabling the Chat
+http://localhost:49160/settings/:username
+body: {
+    "chat": true
+}
+
+# PUT (Params + JSON) - Update Setting disabling the Chat
+http://localhost:49160/settings/:username
+body: {
+    "chat": false
+}
+
+# POST (JSON) - Create User
+http://localhost:49160/users
+body: {
+    "email": "email@domain.com"
+}
+
+# POST (JSON) - User sends Message
+http://localhost:49160/messages
+body: {
+    "user_id": "user_id",
+    "text": "user message"
+}
+
+# POST (JSON) - Admin sends Message
+http://localhost:49160/messages
+body: {
+    "user_id": "user_id",
+    "text": "admin message",
+    "admin_id": "admin_id"
+}
+
+# GET - Show all Messages by User
+http://localhost:49160/messages/:user_id
 ```
 
 ## License
