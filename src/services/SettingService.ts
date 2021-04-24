@@ -1,4 +1,4 @@
-import { getCustomRepository, Repository } from "typeorm";
+import { getCustomRepository } from "typeorm";
 import { Setting } from "../entities/Setting";
 import { SettingRepository } from "../repositories/SettingRepository";
 
@@ -8,7 +8,7 @@ interface ISettingCreate {
 }
 
 class SettingService {
-    private settingRepository: Repository<Setting>;
+    private settingRepository: SettingRepository;
 
     constructor() {
         this.settingRepository = getCustomRepository(SettingRepository);
@@ -42,7 +42,8 @@ class SettingService {
     }
 
     async update(username: string, chat: boolean) {
-        const setting = await this.settingRepository.createQueryBuilder()
+        await this.settingRepository
+            .createQueryBuilder()
             .update(Setting)
             .set({ chat })
             .where("username = :username", { username })

@@ -1,6 +1,5 @@
-import { Connection } from "../entities/Connection";
 import { ConnectionRepository } from "../repositories/ConnectionRepository";
-import { getCustomRepository, Repository } from "typeorm";
+import { getCustomRepository } from "typeorm";
 
 interface IConnectionCreate {
     socket_id: string;
@@ -10,7 +9,7 @@ interface IConnectionCreate {
 }
 
 class ConnectionService {
-    private connectionRepository: Repository<Connection>;
+    private connectionRepository: ConnectionRepository;
 
     constructor() {
         this.connectionRepository = getCustomRepository(ConnectionRepository);
